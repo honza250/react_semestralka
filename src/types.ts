@@ -3,7 +3,7 @@ export type Todo = {
   name: string
   completed: boolean
   description?: string
-  priority?: number
+  priority: 1 | 2 | 3;
 }
 
 // export type TodoCreate = Omit<Todo, 'id' | 'completed'>
