@@ -21,6 +21,8 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
   return (
     <li className={todo.completed ? 'completed' : ''}>
       <span>{todo.name}</span>
+      <span>{todo.name} (Priority: {todo.priority})</span>
+
       <button onClick={handleDeleteTodo}>Delete</button>
       <button onClick={handleToggleTodo} className="toggle">
         {todo.completed ? 'Undo' : 'Completed'}
