@@ -18,7 +18,11 @@ const handleResponse = async <T>(response: Response): Promise<T> => {
 }
 
 export const todoApi = {
-  async fetchTodos() {
+  async fetchTodos(priority?: number) {
+    let url = API_URL;
+    if (priority) {
+      url += `?priority=${priority}`
+    }
     const response = await fetch(API_URL)
     return handleResponse<Todo[]>(response)
   },
